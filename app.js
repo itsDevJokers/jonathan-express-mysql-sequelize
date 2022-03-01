@@ -22,6 +22,4 @@ app.use('/uploads/', express.static(path.join(__dirname, 'uploads'))); // middle
 app.use('/api/v2', productRouter); // middleware yang mengelola endpoint api dari router product
 
 // ketika server sukses berjalan dengan port yang sudah ditentukan
-app.listen(port, () => {
-    console.log(`listening on port ${port}`)
-})
+app.listen(port)
