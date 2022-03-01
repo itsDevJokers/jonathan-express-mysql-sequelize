@@ -6,6 +6,7 @@ const {Sequelize} = require('sequelize');
 const sequelize = new Sequelize({
     database: 'eduwork-database', // nama database
     host: '127.0.0.1', // host database
+    port: 3306,
     username: 'root', // username database
     password: '', // password database
     dialect: 'mysql' // menggunakan query mysql dengan driver mysql2
