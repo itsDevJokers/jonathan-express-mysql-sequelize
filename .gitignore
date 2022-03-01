@@ -1,0 +1,2 @@
+# Ignore node_modules to push to github
+/node_modules
