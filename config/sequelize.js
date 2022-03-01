@@ -2,14 +2,22 @@
 
 //  mendaftarkan dependency Sequelize yang telah diinstall
 const {Sequelize} = require('sequelize');
+let sequelize = null;
 
-const sequelize = new Sequelize(process.env.DATABASE_URL,{
+if(process.env.DATABASE_URL){
+  sequelize = new Sequelize(process.env.DATABASE_URL,{
+      dialect: 'mysql' // menggunakan query mysql dengan driver mysql2
+  });
+} else {
+  sequelize = new Sequelize({
     database: 'eduwork-database', // nama database
-    host: '127.0.0.1', // host database
+    host: 'localhost', // host database
     username: 'root', // username database
     password: '', // password database
     dialect: 'mysql' // menggunakan query mysql dengan driver mysql2
 });
+}
+
 
 // Menampilkan pesan jika koneksi ke database mysql sukses
 (async () => {
